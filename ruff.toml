@@ -1,0 +1,3 @@
+line-length = 100
+select = ["E","F","I","UP","B","SIM"]
+ignore = ["E203","E501"]
