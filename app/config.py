@@ -1,24 +1,22 @@
-from pydantic_settings import BaseSettings
-
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import AnyUrl
 
 class Settings(BaseSettings):
     SECRET_KEY: str
-    DATABASE_URL: str
 
-    BACKEND_URL: str = "http://localhost:8000"
-    FRONTEND_URL: str = "http://localhost:3000"
+    DATABASE_URL: AnyUrl
+
+    FRONTEND_URL: str
+    BACKEND_URL: str
 
     GOOGLE_CLIENT_ID: str
     GOOGLE_CLIENT_SECRET: str
+    GOOGLE_REDIRECT_URI: str  # e.g. http://localhost:8000/auth/google/callback
 
     OPENAI_API_KEY: str | None = None
 
-    # cookie name for auth
-    SESSION_COOKIE_NAME: str = "access_token"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 14  # 14 days
+    DEFAULT_TIMEZONE: str = "Australia/Sydney"
 
-    class Config:
-        env_file = ".env"
-
+    model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
 
 settings = Settings()

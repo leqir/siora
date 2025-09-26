@@ -1,34 +1,26 @@
 [project]
-name = "calendar-assistant-backend"
+name = "backend"
 version = "0.1.0"
-description = "FastAPI backend for AI-powered calendar assistant"
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-  "fastapi>=0.115",
-  "uvicorn[standard]>=0.30",
-  "pydantic>=2.8",
-  "pydantic-settings>=2.4",
-  "sqlalchemy>=2.0",
-  "psycopg[binary]>=3.2",
-  "httpx>=0.27",
-  "python-dateutil>=2.9",
-  "dateparser>=1.2",
-  "PyJWT>=2.9",
-  "google-auth>=2.33",
-  "google-auth-oauthlib>=1.2",
-  "google-api-python-client>=2.142",
-  "openai>=1.43",
-  "anyio>=4.4"
+    "asyncpg>=0.30.0",
+    "fastapi>=0.117.1",
+    "google-api-python-client>=2.183.0",
+    "google-auth>=2.40.3",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.2",
+    "httpx>=0.28.1",
+    "itsdangerous>=2.2.0",
+    "openai>=1.109.1",
+    "pydantic>=2.11.9",
+    "pydantic-settings>=2.11.0",
+    "python-dateutil>=2.9.0.post0",
+    "python-multipart>=0.0.20",
+    "ruff>=0.13.2",
+    "sqlalchemy>=2.0.43",
+    "sse-starlette>=3.0.2",
+    "tzdata>=2025.2",
+    "uvicorn[standard]>=0.37.0",
 ]
-
-[dependency-groups]
-dev = [
-  "ruff>=0.6",
-  "pytest>=8.3",
-]
-
-[tool.ruff]
-line-length = 100
-select = ["E","F","I","UP","B","SIM"]
-ignore = ["E203","E501"]
